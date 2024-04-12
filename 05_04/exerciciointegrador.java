@@ -159,6 +159,39 @@ public class ExercicioIntegrador
                 
                 
             }
+            public static String getDiaSemana(int dia, int mes, int ano) {
+//Algoritmo para descobrir o dia da semana
+int a = ((12 - mes) / 10);
+int b = ano - a;
+int c = mes + (12 * a);
+int d = b / 100;
+int e = d / 4;
+int f = 2 - d + e;
+int g = (int) (365.25 * b);
+int h = (int) (30.6001 * (c + 1));
+int i = (int) ((f + g) + (h + dia) + 5);
+int j = (int) (i % 7); 
+
+    switch (j) {
+        case 0:
+            return "Sábado";
+        case 1:
+            return "Domingo";
+        case 2:
+            return "Segunda";
+        case 3:
+            return "Terça";
+        case 4:
+            return "Quarta";
+        case 5:
+            return "Quinta";
+        case 6:
+            return "Sexta";
+        default:
+            return "Erro ao tentar retornar o dia da semana";
+    }
+}
+}
         }
         
         
